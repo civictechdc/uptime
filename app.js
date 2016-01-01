@@ -18,11 +18,9 @@ jsonfile.readFile('./config.json', function (err, contents) {
     if (err) {
         console.log('No config.json found. Using app defaults.');
     } else {
-        console.log(contents);
         config = contents;
     }
     var scan = schedule.scheduleJob(config.frequency || '* * * * * *', function () {
-        console.log("beepboop");
         Check.getSites();
     });
 });
