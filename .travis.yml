@@ -7,7 +7,7 @@ cache:
     - node_modules
 sudo: false
 addons:
-    postgresql: "9.5"
+    postgresql: "9.4"
 before_script: psql -c 'create database uptime_test;' -U postgres
 script: npm test --coverage
 notifications:
