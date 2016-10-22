@@ -1,3 +1,5 @@
+'use strict';
+
 var express = require('express');
 var schedule = require('node-schedule');
 var jsonfile = require('jsonfile');
@@ -12,7 +14,7 @@ var app = express();
 //     res.send('Hello World!');
 // });
 
-config = {};
+var config = {};
 
 jsonfile.readFile('./config.json', function (err, contents) {
     if (err) {
