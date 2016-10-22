@@ -27,9 +27,7 @@ jsonfile.readFile('./config.json', function (err, contents) {
     });
 });
 
-models.sequelize.sync({
-    force: process.env.FRESHDB || false
-}).then(function () {
+models.sequelize.sync().then(function () {
     var server = app.listen(3000, function () {
         var host = server.address().address;
         var port = server.address().port;
